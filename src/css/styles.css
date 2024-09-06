@@ -1,0 +1,56 @@
+@import url("navigation.css");
+@import url("header.css");
+@import url("dashboard.css");
+
+body{
+    min-width: 700px;
+    width: 100dvw;
+    max-width: 100dvw;
+    padding: 0;
+    margin: 0;
+    /* Main color, change this to change the whole color of the website */
+    background-color: aliceblue;
+}
+.container{
+    background-color: black;
+    width: 100dvw;
+    /* min-width: inherit;
+    max-width: inherit;
+    position: fixed; */
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto repeat(3, 1fr);
+    grid-template-rows: auto auto repeat(2, 1fr);
+    /* min-width: inherit;
+    max-width: 100dvw; */
+    width: 100dvw;
+    height: 100dvh;
+    box-sizing: border-box;
+    position: fixed;
+    height: 800px;
+    min-width: 1100px;
+}
+.navigation-tab{
+    background-color: inherit;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    /* padding: 10px; */
+    border: 1px black solid;
+}
+.header{
+    background-color: inherit;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    /* padding: 10px; */
+    border: 1px black solid;
+    border-left: none;
+}
+.content{
+    background-color: inherit;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 5;
+    grid-row-end: 5;
+    overflow: auto;
+}
