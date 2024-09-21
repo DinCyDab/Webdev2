@@ -76,6 +76,11 @@ button {
         border-color: #FFFFFF;
     }
 
+    .ghost{
+        margin: 0;
+        margin-left: 10px;
+    }
+
 form {
     background-color: #FFFFFF;
     display: flex;
@@ -211,4 +216,23 @@ input {
 
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
+}
+
+label{
+    width: 100%;
+    padding: 10px;
+}
+
+.forgot-password{
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+}
+
+.no-account{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding: 10px;
 }
