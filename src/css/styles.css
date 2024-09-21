@@ -10,6 +10,7 @@ body{
     margin: 0;
     /* Main color, change this to change the whole color of the website */
     background-color: aliceblue;
+    font-family: "League Spartan", sans-serif;
 }
 .container{
     background-color: black;

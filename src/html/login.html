@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp and Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="">
+                <h1 style="margin-bottom: 20px">Create Account</h1>
+                <label for="password"><b>Username</b></label>
+                <input type="text" name="username" placeholder="Username">
+                <label for="password"><b>Email</b></label>
+                <input type="text" name="email" placeholder="Email Address">
+                <label for="password"><b>Password</b></label>
+                <input type="text" name="password" placeholder="Password">
+                <label for="password"><b>Confirm Password</b></label>
+                <input type="password" name="confirmpassword" placeholder="Confirm Password">
+                <button style="margin-top:10px">Create Account</button>
+                <h5>Already using? <a class="ghost" id="signIn" style="color:#262628;"><u>Sign In</u></a></h5>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <img src="../../imgsrc/navigation-images/logo.png" alt="pic-1" width="270" style="margin-bottom: 30px;"/>
+                <label for="email"><b>Email Address</b></label>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <label for="password"><b>Password</b></label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <a href="#" style="padding-left:150px; font-weight: bold">Forgot Your Password?</a>
+                <button style="margin-top: 10px">Log In</button>
+                <h5>Don't have an account? <a class="ghost" id="signUp" style="color:#262628;"><u>Sign Up</u></a></h5>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <img src="../../imgsrc/login-images/create.png" alt="pic-1" height="520" width="500"/>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <img src="../../imgsrc/login-images/log-in.png" alt="pic-2" height="520" width="500"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+    </script>
+</body>
+</html>
+
