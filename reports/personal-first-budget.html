@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Personal</title>
+    <link rel="stylesheet" href="personal-first-budget.css">
+</head>
+    <body>
+        <header>
+            <div class="title-group">
+                <h2 class="header-title">Personal</h2>
+            </div>
+            <div class="nav-group">
+                <img src="/imgsrc/notif.png" alt="notifications">
+                <div class="vertical-line"></div>
+                <img src="/imgsrc/profile.png" alt="profile picture">
+            </div>
+        </header>
+        
+        <div class="user-details">
+            <img src="imgsrc/profile.png" alt="User Profile" id="profileImg">
+            <h1 id="username">Maxie Anderson</h1>
+            <button>
+                <img src="imgsrc/edit.png" alt="Edit Button" id="edit-btn">
+            </button>
+        </div>
+
+        <div class="summary">
+            <div class="data">
+                <div class="expenses">
+                    <h2>Expenses</h2>
+                    <h3>P1,255</h3>
+                </div>
+                <div class="line"></div>
+                <div class="income">
+                    <h2>Income</h2>
+                    <h3>P0</h3>
+                </div>
+                <div class="line"></div>
+                <div class="records">
+                    <h2>Records</h2>
+                    <h3>0</h3>
+                </div>
+            </div>
+            <hr class="horizontal">
+        </div>
+
+        <div class="buttons">
+            <div class="budget">
+                <button id="openBudget">
+                    <img src="/imgsrc/button.png" alt="budget">
+                    <h3>Budget</h3>
+                </button>
+            </div>
+            
+            <div class="savings">
+                <button>
+                    <img src="/imgsrc/button.png" alt="savings">
+                    <h3>Savings</h3>
+                </button>
+            </div>
+
+            <div class="calendar">
+                <button>
+                    <img src="/imgsrc/button.png" alt="calendar">
+                    <h3>Calendar</h3>
+                </button>
+            </div>
+
+            <div class="categ0ry">
+                <button>
+                    <img src="/imgsrc/button.png" alt="category">
+                    <h3>Category</h3>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Budget</h2>
+                <div class="budget-summary">
+                    <div class="left-photo">
+                        <div class="dropdown">
+                            <button class="dropdown-btn" id="selectedOption" onclick="toggleDropdown()">
+                                Sept <span class="arrow">&#9662;</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="selectOption('Sept')">Sept</a>
+                                <a href="#" onclick="selectOption('Oct')">Oct</a>
+                                <a href="#" onclick="selectOption('Nov')">Nov</a>
+                            </div>
+                        </div>
+                        <img src="imgsrc/budget.png" alt="">
+                    </div>
+                    
+                    <div class="budget-data">
+                        <div class="budget-header">
+                            <div class="budget-expenses">
+                                <h3>Expenses</h3>
+                                <p>₱1,255</p>
+                            </div>
+                            <div class="budget-divider"></div>
+                            <div class="budget-income">
+                                <h3>Income</h3>
+                                <p>₱0</p>
+                            </div>
+                            <div class="budget-divider"></div>
+                            <div class="budget-balance">
+                                <h3>Balance</h3>
+                                <p>-₱1,255</p>
+                            </div>
+                        </div>
+                        <hr class="budget-horizontal">
+                        <div class="budget-details">
+                            <p>Budget <span>7,000</span></p>
+                            <p>Remaining <span>5,745</span></p>
+                            <p>Daily Average <span>958</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-btn">
+                    <button>Add new category budget</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="/imgsrc/logo.png" alt="">
+            </div>
+            <ul class="nav-menu">
+                <li><button>Home</button></li>
+                <li><button>Add</button></li>
+                <li><button>Reports</button></li>
+                <li><button class="active">Personal</button></li>
+            </ul>
+            <ul class="nav-footer">
+                <li><button>Settings</button></li>
+                <li><button>Help</button></li>
+                <li><button>Log out</button></li>
+            </ul>
+        </nav>
+    
+        <script>
+
+            const modal = document.getElementById("modal");
+            const openModalBtn = document.getElementById("openBudget");
+            const closeModalBtn = document.querySelector(".close-btn");
+
+            openModalBtn.addEventListener("click", () => {
+                modal.style.display = "flex";
+            });
+
+            closeModalBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            function toggleDropdown() {
+                const dropdownContent = document.getElementById("dropdownContent");
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            }
+
+            function selectOption(option) {
+                document.getElementById("selectedOption").firstChild.textContent = option;
+                document.getElementById("dropdownContent").style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown-btn')) {
+                    document.getElementById("dropdownContent").style.display = "none";
+                }
+            };
+
+        </script>
+    </body>
+</html>
